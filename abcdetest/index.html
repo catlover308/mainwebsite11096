@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saugus High School Robotics Team - Sponsorship Packet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1e3c72;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .robot-placeholder {
+            background: linear-gradient(135deg, #f0f4f8, #d6e8f5);
+            border: 2px dashed #2a5298;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #2a5298;
+            font-weight: bold;
+        }
+        
+        .first-info {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .first-info h3 {
+            font-size: 2em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .first-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #2a5298;
+        }
+        
+        .feature-card h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .budget-overview {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .budget-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .budget-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #1e3c72;
+            border-top: 2px solid #2a5298;
+            margin-top: 10px;
+            padding-top: 20px;
+        }
+        
+        .budget-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .sponsor-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .tier-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tier-diamond {
+            border-top: 5px solid #9333ea;
+        }
+        
+        .tier-gold {
+            border-top: 5px solid #f59e0b;
+        }
+        
+        .tier-silver {
+            border-top: 5px solid #6b7280;
+        }
+        
+        .tier-bronze {
+            border-top: 5px solid #92400e;
+        }
+        
+        .tier-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tier-amount {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .tier-benefits {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .tier-benefits li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .tier-benefits li::before {
+            content: '✓';
+            color: #22c55e;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .support-ways {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .support-column {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .support-column h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        .support-list {
+            list-style: none;
+        }
+        
+        .support-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .support-list li::before {
+            content: '→';
+            color: #2a5298;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .contact-form {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .form-container {
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #2a5298;
+            outline: none;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .tax-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .tax-info h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .about-grid,
+            .support-ways {
+                grid-template-columns: 1fr;
+            }
+            
+            .sponsor-tiers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Saugus High School Robotics</h1>
+                <p>Building Tomorrow's Engineers Today</p>
+                <p>FIRST Robotics Competition Team • 2026 Season</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">About Our Team</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>We're a new FIRST Robotics Competition team starting up for the 2026 season based out of Saugus High School. Our mission is to educate and empower students by exploring engineering, design, and teamwork through hands-on, competitive robotics: building real skills for real careers.</p>
+                    
+                    <p>Even though we're rookies, our team is led by students with prior FRC experience who are also committed to staying involved after their time on the team, enabling us to build and sustain a competitive team from the ground up.</p>
+                </div>
+                <div class="robot-placeholder">
+                    [Future Robot Image]
+                </div>
+            </div>
+            
+            <div class="first-info">
+                <h3>What is FIRST Robotics Competition?</h3>
+                <p>The FIRST Robotics Competition (FRC) is an international STEM program where high school students collaborate to design, build, and compete with custom-built robots.</p>
+                
+                <div class="first-features">
+                    <div class="feature-card">
+                        <h4>Six-Week Build Season</h4>
+                        <p>Students gain hands-on experience in a self-led, internship-style environment building 115+ lb industrial-scale robots with limited guidance from adult mentors.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Real-World Skills</h4>
+                        <p>Students develop complex robots while gaining experience in fundraising, branding, and outreach - preparing them for industry careers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Industry-Level Engineering</h4>
+                        <p>FRC requires highly customized designs, teaching machining, advanced CAD, and object-based programming - the exact skills used in manufacturing and engineering careers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Budget Section -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">2026 Season Budget</h2>
+            <div class="budget-overview">
+                <div class="budget-item">
+                    <div>
+                        <strong>Season Registration</strong>
+                        <div class="budget-description">Paid to FIRST for official season participation (+$4,000 if we advance to District Championship)</div>
+                    </div>
+                    <span>$6,300</span>
+                </div>
+                <div class="budget-item">
+                    <div>
+                        <strong>Construction Materials</strong>
+                        <div class="budget-description">Polycarbonate sheets, aluminum sheets & box tube, wood for prototyping and field elements</div>
+                    </div>
+                    <span>$2,000</span>
+                </div>
+                <div class="budget-item">
+                    <div>
+                        <strong>Off-the-shelf Components</strong>
+                        <div class="budget-description">Fasteners, gearboxes, control system electronics & motors (high first-year cost, reused in future seasons)</div>
+                    </div>
+                    <span>$9,000</span>
+                </div>
+                <div class="budget-item">
+                    <div>
+                        <strong>Additional Equipment</strong>
+                        <div class="budget-description">Transportation and event equipment not available from school</div>
+                    </div>
+                    <span>$2,000</span>
+                </div>
+                <div class="budget-item">
+                    <div>
+                        <strong>Transportation</strong>
+                        <div class="budget-description">Bus transportation to and from competition events</div>
+                    </div>
+                    <span>$11,500</span>
+                </div>
+                <div class="budget-item">
+                    <div>
+                        <strong>Miscellaneous Expenses</strong>
+                        <div class="budget-description">Team t-shirts, branding, software subscriptions, and unanticipated purchases</div>
+                    </div>
+                    <span>$2,700</span>
+                </div>
+                <div class="budget-item">
+                    <div><strong>First Season Total</strong></div>
+                    <span><strong>$33,500</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Support Section -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Why Support Us?</h2>
+            <div class="about-text" style="text-align: center; font-size: 1.2em; margin-bottom: 40px;">
+                <p>Sponsoring our team means more than helping us build robots. It's an opportunity to support aspiring engineers, innovators, and problem-solvers who will be the leaders of tomorrow. You'll be directly enabling students to apply STEM concepts they would otherwise have only known about in passing or through the classroom, while representing your commitment to your local community.</p>
+            </div>
+            
+            <div class="support-ways">
+                <div class="support-column">
+                    <h3>In-Kind Donations</h3>
+                    <ul class="support-list">
+                        <li>Machine access & used machines</li>
+                        <li>Raw materials & sheets</li>
+                        <li>Manufacturing support</li>
+                        <li>Shirt printing services</li>
+                        <li>Catering discounts</li>
+                        <li>Mentor expertise</li>
+                    </ul>
+                </div>
+                <div class="support-column">
+                    <h3>Community Benefits</h3>
+                    <ul class="support-list">
+                        <li>Company visibility on robot, shirts, pit, and website</li>
+                        <li>Community impact supporting hands-on STEM learning</li>
+                        <li>Future exposure to students entering tech and trades</li>
+                        <li>Tax-deductible charitable contribution</li>
+                        <li>Supporting local education initiatives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsor Tiers -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Sponsorship Opportunities</h2>
+            <div class="sponsor-tiers">
+                <div class="tier-card tier-diamond">
+                    <div class="tier-title" style="color: #9333ea;">Diamond Sponsor</div>
+                    <div class="tier-amount">$5,000+</div>
+                    <ul class="tier-benefits">
+                        <li>Prominent company logo on robot</li>
+                        <li>Large company logo on t-shirts</li>
+                        <li>Company logo in pit banner</li>
+                        <li>Company logo and tier on webpage</li>
+                        <li>Instagram shoutout</li>
+                        <li>Student-machined recognition piece</li>
+                        <li>Workspace tour (local sponsors)</li>
+                    </ul>
+                </div>
+                
+                <div class="tier-card tier-gold">
+                    <div class="tier-title" style="color: #f59e0b;">Gold Sponsor</div>
+                    <div class="tier-amount">$1,000 - $4,999</div>
+                    <ul class="tier-benefits">
+                        <li>Company logo on robot</li>
+                        <li>Company logo on t-shirts</li>
+                        <li>Company logo and tier on webpage</li>
+                        <li>Instagram shoutout</li>
+                        <li>Workspace tour (local sponsors)</li>
+                    </ul>
+                </div>
+                
+                <div class="tier-card tier-silver">
+                    <div class="tier-title" style="color: #6b7280;">Silver Sponsor</div>
+                    <div class="tier-amount">$500 - $999</div>
+                    <ul class="tier-benefits">
+                        <li>Company logo on robot</li>
+                        <li>Company logo and tier on webpage</li>
+                        <li>Instagram shoutout</li>
+                    </ul>
+                </div>
+                
+                <div class="tier-card tier-bronze">
+                    <div class="tier-title" style="color: #92400e;">Bronze Sponsor</div>
+                    <div class="tier-amount">$300 - $499</div>
+                    <ul class="tier-benefits">
+                        <li>Company name on robot</li>
+                        <li>Company logo and tier on webpage</li>
+                        <li>Instagram shoutout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+        <div class="container">
+            <h2 style="margin-bottom: 40px; font-size: 2.5em;">Partner With Us</h2>
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="company-name">Company Name *</label>
+                        <input type="text" id="company-name" name="company-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-name">Contact Name *</label>
+                        <input type="text" id="contact-name" name="contact-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sponsor-tier">Preferred Sponsorship Level</label>
+                        <select id="sponsor-tier" name="sponsor-tier">
+                            <option value="">Select a tier...</option>
+                            <option value="diamond">Diamond Sponsor ($5,000+)</option>
+                            <option value="gold">Gold Sponsor ($1,000-$4,999)</option>
+                            <option value="silver">Silver Sponsor ($500-$999)</option>
+                            <option value="bronze">Bronze Sponsor ($300-$499)</option>
+                            <option value="custom">Custom/In-Kind</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Support Type</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="monetary" name="support-type" value="monetary">
+                                <label for="monetary">Monetary Support</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="in-kind" name="support-type" value="in-kind">
+                                <label for="in-kind">In-Kind Donations</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mentors" name="support-type" value="mentors">
+                                <label for="mentors">Mentorship</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="services" name="support-type" value="services">
+                                <label for="services">Services</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your company's interest in supporting our team, specific in-kind donations you might offer, or any questions you have..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Sponsorship Inquiry</button>
+                </form>
+            </div>
+            
+            <div class="tax-info">
+                <h3>Tax Deductibility Information</h3>
+                <p>All contributions made to Saugus High School and its affiliated robotics club are tax-deductible under Section 170 of the Internal Revenue Code. Saugus High School is a public educational institution, and as such, donations are eligible for tax deduction under U.S. federal law. No goods or services were provided in exchange for your donation, allowing it to be fully deductible as a charitable contribution.</p>
+                <p><strong>Please retain related documentation for your records and consult your tax advisor to confirm the specific deductibility of your donation.</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
